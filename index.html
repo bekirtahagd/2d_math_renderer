@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>"2d Math Renderer"</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button class="createFunc">Create New Function</button>
+    <div id="function_container">
+      <div class="function" type="sin">
+        <label for="type">Type</label>
+
+        <select name="type" class="func_type">
+          <optgroup label="Trigonometric">
+            <option value="sin">Sin</option>
+            <option value="cos">Cos</option>
+          </optgroup>
+
+          <optgroup label="Polynomic">
+            <option value="linear">Linear</option>
+            <option value="quadratic">Quadratic</option>
+            <option value="cubic">Cubic</option>
+            <option value="quartic">Quartic</option>
+          </optgroup>
+        </select>
+
+        <div class="sin">
+          <label for="a" style="padding-right: 20px;">a * sin(b * (x-c)) + d  |  </label>
+          <label for="a">a:</label>
+          <input type="number" class="a" value="1">
+          <label for="b">b:</label>
+          <input type="number" class="b" value="1">
+          <label for="c">c:</label>
+          <input type="number" class="c" value="0">
+          <label for="d">d:</label>
+          <input type="number" class="d" value="0">
+        </div>
+
+        <div class="cos">
+          <label for="a" style="padding-right: 20px;">a * cos(b * (x-c)) + d  |  </label>
+          <label for="a">a:</label>
+          <input type="number" class="a" value="1">
+          <label for="b">b:</label>
+          <input type="number" class="b" value="1">
+          <label for="c">c:</label>
+          <input type="number" class="c" value="0">
+          <label for="d">d:</label>
+          <input type="number" class="d" value="0">
+        </div>
+
+        <div class="linear">
+          <label for="m" style="padding-right: 20px;">m * x + b  |  </label>
+          <label for="m">m:</label>
+          <input type="number" class="m" value="1">
+          <label for="b">b:</label>
+          <input type="number" class="b" value="0">
+        </div>
+
+        <div class="quadratic">
+          <label for="a" style="padding-right: 20px;">ax<sup>2</sup>+bx+c  |  </label>
+          <label for="a">a:</label>
+          <input type="number" class="a" value="1">
+          <label for="b">b:</label>
+          <input type="number" class="b" value="0">
+          <label for="c">c:</label>
+          <input type="number" class="c" value="0">
+        </div>
+
+        <div class="cubic">
+          <label for="a" style="padding-right: 20px;">ax<sup>3</sup>+bx<sup>2</sup>+cx+d  |  </label>
+          <label for="a">a:</label>
+          <input type="number" class="a" value="1">
+          <label for="b">b:</label>
+          <input type="number" class="b" value="0">
+          <label for="c">c:</label>
+          <input type="number" class="c" value="0">
+          <label for="d">d:</label>
+          <input type="number" class="d" value="0">
+        </div>
+
+        <div class="quartic">
+          <label for="a" style="padding-right: 20px;">ax<sup>4</sup>+bx<sup>3</sup>+c<sup>2</sup>+dx+e  |  </label>
+          <label for="a">a:</label>
+          <input type="number" class="a" value="1">
+          <label for="b">b:</label>
+          <input type="number" class="b" value="0">
+          <label for="c">c:</label>
+          <input type="number" class="c" value="0">
+          <label for="d">d:</label>
+          <input type="number" class="d" value="0">
+          <label for="e">e:</label>
+          <input type="number" class="e" value="0">
+        </div>
+
+        <button class="deleteFunc" onclick="deleteFunction(this)">Delete</button>
+      </div>
+    </div>
+    <div class="drawContainer">
+      <label for="animate">Animation?</label>
+      <input type="checkbox" id="animate" />
+      <label for="delay">Animation Delay</label>
+      <input type="number" id="delay" style="margin-right: 35px;" value="500" />
+
+      <label for="xOffset">Axis Offsets |</label>
+      <label for="xOffset">x:</label>
+      <input type="number" id="xOffset" value="0">
+      <label for="yOffset">y:</label>
+      <input type="number" id="yOffset" value="0">
+
+      <button id="drawFunc" style="margin-left: 35px;">Draw Function</button>
+    </div>
+
+
+    <canvas width="1023" height="576"></canvas>
+
+    <script src="./js/utility.js"></script>
+    <script src="./js/globals.js"></script>
+    <script src="./js/visual-setup.js"></script>
+    <script src="./js/draw-functions.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

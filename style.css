@@ -1,0 +1,86 @@
+body {
+    display: grid;
+    place-content: center;
+}
+
+/* General */
+input {
+    width: 30px;
+}
+#function_container {
+    margin-bottom: 15px;
+}
+.createFunc {
+    margin-bottom: 20px;
+}
+.function {
+    display: flex;
+    gap: 5px;
+    border: 1px solid black;
+    padding: 5px;
+}
+.function > * > input, #delay{
+    width: 50px;
+}
+.sin, .cos, .linear, .quadratic, .cubic, .quartic {
+    display: none;
+    padding-left: 15px;
+}
+
+
+
+/* Button */
+.deleteFunc {
+    margin-left: auto;
+}
+
+
+/* Responsive CSS */
+
+/* Sin */
+.function[type="sin"] > .sin{
+    display: inline-block;
+}
+.function:not([type="sin"]) > .sin {
+    display: none;
+}
+
+/* Cos */
+.function[type="cos"] > .cos{
+    display: inline-block;
+}
+.function:not([type="cos"]) > .cos {
+    display: none;
+}
+
+/* Linear */
+.function[type="linear"] > .linear{
+    display: inline-block;
+}
+.function:not([type="linear"]) > .linear {
+    display: none;
+}
+
+/* Quadratic */
+.function[type="quadratic"] > .quadratic{
+    display: inline-block;
+}
+.function:not([type="quadratic"]) > .quadratic {
+    display: none;
+}
+
+/* Cubic */
+.function[type="cubic"] > .cubic{
+    display: inline-block;
+}
+.function:not([type="cubic"]) > .cubic {
+    display: none;
+}
+
+/* Quartic */
+.function[type="quartic"] > .quartic{
+    display: inline-block;
+}
+.function:not([type="quartic"]) > .quartic {
+    display: none;
+}
