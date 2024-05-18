@@ -2,8 +2,10 @@
 # 2d_Math_Renderer
 
 <p align="center"><img src="https://socialify.git.ci/bekirtahagd/2d_math_renderer/image?font=Bitter&amp;language=1&amp;name=1&amp;owner=1&amp;pattern=Charlie%20Brown&amp;theme=Dark" alt="project-image"></p>
+Demo: https://bekirtahagd.github.io/2d_math_renderer/ <br>
 
-Ein 2d Renderer, welcher in der Lage ist mathematische Funktionen darzustellen. Dabei kann man verschiedene trigonometrische aber auch Polynomomfunktionen erstellen.
+
+<br>Ein 2d Renderer, welcher in der Lage ist mathematische Funktionen darzustellen. Dabei kann man verschiedene trigonometrische aber auch Polynomomfunktionen erstellen.
 
 
 
