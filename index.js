@@ -31,12 +31,14 @@ document.querySelector("#drawFunc").addEventListener("click", (e) => {
   changedOffset.x = changedOffset.x;
 
   //Set offset
-  let xOffset = Number(document.querySelector("#xOffset").value);
-  let yOffset = Number(document.querySelector("#yOffset").value);
+  offset.x = Number(document.querySelector("#xOffset").value);
+  offset.y = Number(document.querySelector("#yOffset").value);
 
-  offset.x = xOffset;
-  offset.y = yOffset;
+  //Amount of poiints
+  anzahlPunkte.x = Number(document.querySelector("#xAnzahlPunkte").value);
+  anzahlPunkte.y = Number(document.querySelector("#yAnzahlPunkte").value);
 
+  //Animation
   let checkbox = document.querySelector("#animate").checked;
   if (checkbox) {
     let delay = document.querySelector("#delay").value;
@@ -156,7 +158,7 @@ function drawQuadratic(func) {
     start: drawStart,
     end: laengeX,
     step: step,
-    color: "green"
+    color: "purple"
   });
 }
 function drawCubic(func) {
@@ -175,7 +177,7 @@ function drawCubic(func) {
     start: drawStart,
     end: laengeX,
     step: step,
-    color: "green"
+    color: "orange"
   });
 }
 
@@ -197,6 +199,6 @@ function drawQuartic(func) {
     start: drawStart,
     end: laengeX,
     step: step,
-    color: "green"
+    color: "yellow"
   });
 }

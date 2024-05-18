@@ -4,15 +4,19 @@ const ursprung = {
   y: 500,
 };
 const anzahlPunkte = {
-  x: 10,
-  y: 4,
+  x: 5,
+  y: 5,
 };
 const laengeX = 850;
 const laengeY = 450;
 
 // +1 So we can have space between last number and Arrow
-let xLE = laengeX / (anzahlPunkte.x + 1);
-let yLE = laengeY / (anzahlPunkte.y + 1);
+function xLE() {
+  return laengeX / (anzahlPunkte.x + 1);
+}
+function yLE() {
+  return laengeY / (anzahlPunkte.y + 1);
+}
 
 //Offset
 let offset = {
@@ -22,5 +26,5 @@ let offset = {
 let changedOffset = offset;
 
 //Function Accuracy
-const drawStart = -1*xLE;
+const drawStart = -1*xLE();
 let step = 0.1;

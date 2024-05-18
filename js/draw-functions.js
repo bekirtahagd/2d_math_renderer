@@ -88,14 +88,14 @@ function drawAxis(axis, drawNumbers = true, offset) {
 
     if (axis.name === "x") {
       for (let i = 1; i <= anzahlPunkte.x; i++) {
-        const x = ursprung.x + i * xLE;
+        const x = ursprung.x + i * xLE();
         c.moveTo(x, ursprung.y + pdng);
         c.lineTo(x, ursprung.y - pdng);
         c.fillText((i+offset), x - 3, ursprung.y + 25);
       }
     } else {
       for (let i = 1 ; i <= anzahlPunkte.y; i++) {
-        const y = ursprung.y - i * yLE;
+        const y = ursprung.y - i * yLE();
         c.moveTo(ursprung.x - pdng, y);
         c.lineTo(ursprung.x + pdng, y);
         c.fillText((i+offset), ursprung.x - 20, y + 5); // Remove text a bit so it looks a bit better
@@ -115,9 +115,9 @@ function drawSineFunction({
 }) {
   //Calculate Results
   for (let x = start + step; x < end; x += step) {
-    let modX = ((x + changedOffset.x * xLE) / xLE);
+    let modX = ((x + changedOffset.x * xLE()) / xLE());
     let res = func.a * Math.sin(func.b * (modX - func.c)) + func.d;
-    let p = res * yLE - changedOffset.y * yLE;
+    let p = res * yLE() - changedOffset.y * yLE();
     c.fillStyle = color;
     c.fillRect(ursprung.x + x, ursprung.y - p, 1, 1);
   }
@@ -133,9 +133,9 @@ function drawCosFunction({
 }) {
   //Calculate Results
   for (let x = start + step; x < end; x += step) {
-    let modX = ((x + changedOffset.x * xLE) / xLE);
+    let modX = ((x + changedOffset.x * xLE()) / xLE());
     let res = func.a * Math.cos(func.b * (modX - func.c)) + func.d;
-    let p = res * yLE - changedOffset.y * yLE;
+    let p = res * yLE() - changedOffset.y * yLE();
     c.fillStyle = color;
     c.fillRect(ursprung.x + x, ursprung.y - p, 1, 1);
   }
@@ -151,9 +151,9 @@ function drawLinearFunction({
 }) {
   //Calculate Results
   for (let x = start + step; x < end; x += step) {
-    let modX = ((x + changedOffset.x * xLE) / xLE);
+    let modX = ((x + changedOffset.x * xLE()) / xLE());
     let res = func.m * modX + func.b;
-    let p = res * yLE - changedOffset.y * yLE;
+    let p = res * yLE() - changedOffset.y * yLE();
     c.fillStyle = color;
     c.fillRect(ursprung.x + x, ursprung.y - p, 1, 1);
   }
@@ -169,9 +169,9 @@ function drawQuadraticFunction({
 }) {
   //Calculate Results
   for (let x = start + step; x < end; x += step) {
-    let modX = ((x + changedOffset.x * xLE) / xLE)
+    let modX = ((x + changedOffset.x * xLE()) / xLE())
     let res = func.a * (modX**2) + func.b * modX + func.c;
-    let p = res * yLE - changedOffset.y * yLE;
+    let p = res * yLE() - changedOffset.y * yLE();
     c.fillStyle = color;
     c.fillRect(ursprung.x + x, ursprung.y - p, 1, 1);
   }
@@ -187,9 +187,9 @@ function drawCubicFunction({
 }) {
   //Calculate Results
   for (let x = start + step; x < end; x += step) {
-    let modX = ((x + changedOffset.x * xLE) / xLE);
+    let modX = ((x + changedOffset.x * xLE()) / xLE());
     let res = func.a * (modX**3) + func.b * (modX**2)+ func.c * modX + func.d;
-    let p = res * yLE - changedOffset.y * yLE;
+    let p = res * yLE() - changedOffset.y * yLE();
     c.fillStyle = color;
     c.fillRect(ursprung.x + x, ursprung.y - p, 1, 1);
   }
@@ -205,9 +205,9 @@ function drawQuarticFunction({
 }) {
   //Calculate Results
   for (let x = start + step; x < end; x += step) {
-    let modX = ((x + changedOffset.x * xLE) / xLE);
+    let modX = ((x + changedOffset.x * xLE()) / xLE());
     let res = func.a * (modX**4) + func.b * (modX**3)+ func.c * (modX**2) + func.d* modX * func.e;
-    let p = res * yLE - changedOffset.y * yLE;
+    let p = res * yLE() - changedOffset.y * yLE();
     c.fillStyle = color;
     c.fillRect(ursprung.x + x, ursprung.y - p, 1, 1);
     console.log(res);
